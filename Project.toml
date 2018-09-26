@@ -1,0 +1,14 @@
+name = "QuHamiltonian"
+uuid = "ba9ab2e8-bd58-11e8-3738-f10ee5594453"
+authors = ["Roger-luo <hiroger@qq.com>"]
+version = "0.1.0"
+
+[deps]
+LaTeXStrings = "b964fa9f-0449-5b57-a5c2-d3ea65f4040f"
+Lattices = "df68907e-b52c-11e8-0751-8d8164e5ce26"
+MacroTools = "1914dd2f-81c6-5fcd-8719-6d5c9610ff09"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+
+[extra]
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
