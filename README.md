@@ -88,15 +88,3 @@ julia> @sum(Z[@vertex i]) + 2 * @sum(Z[@vertex i])
 No hurries, it's coming!
 
 - [ ] conversion to MPO (waiting for iTensor?!)
-
-
-julia> h = @subham Z[@nearest i]Z[@nearest j]
-ERROR: LoadError: MethodError: no method matching merge_placeholder_expr(::Tuple{}, ::Tuple{Expr})
-Closest candidates are:
-  merge_placeholder_expr(::Tuple{}, ::Tuple{Vararg{Symbol,N}}) where N at /Users/roger/Documents/Workshop/QuHamiltonian/src/sub_hamiltonian.jl:5
-  merge_placeholder_expr(::Tuple{Vararg{Symbol,N1}}, ::Tuple{Vararg{Symbol,N2}}) where {N1, N2} at /Users/roger/Documents/Workshop/QuHamiltonian/src/sub_hamiltonian.jl:8
-Stacktrace:
- [1] macro expansion at /Users/roger/.julia/packages/MacroTools/4AjBS/src/macro.jl:74 [inlined]
- [2] QuHamiltonian.SubHamExpr(::Expr) at /Users/roger/Documents/Workshop/QuHamiltonian/src/sub_hamiltonian.jl:47
- [3] @subham(::LineNumberNode, ::Module, ::Any) at /Users/roger/Documents/Workshop/QuHamiltonian/src/sub_hamiltonian.jl:97
-in expression starting at REPL[6]:1
