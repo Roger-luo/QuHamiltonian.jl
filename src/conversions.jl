@@ -18,6 +18,24 @@ function Base.Matrix{T}(expr::OnRegion, ::LOpEigen{2}) where T
 end
 
 using SparseArrays
-# TODO: use partial eval instead
+# TODO: use nonzero iterator instead
 # TODO: And parallel the loop
-SparseArrays.sparse(ex::OnRegion) = sparse(Matrix(ex))
+function SparseArrays.sparse(ex::OnRegion)
+    T = eltype(ex)
+    lhs = Sites(Bit, size(ex.region))
+    rhs = Sites(Bit, size(ex.region))
+    N = length(ex.region)
+    H = spzeros(T, 1<<N, 1<<N)
+
+    @inbounds for i = 1:1<<N
+        for j = 1:1<<N
+            val = ex[lhs, rhs]
+            if !(val ≈ 0)
+                H[j, i] = val
+            end
+            lhs << 1
+        end
+        rhs << 1
+    end
+    H
+end
