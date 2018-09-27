@@ -7,9 +7,10 @@ J = 0.1
 h = 0.1
 
 @nearest i, j
-H = J * @sum(Z[i]Z[j]) - h * @sum(X[i])
+@vertex l
+h = J * @sum(Z[i]Z[j]) - h * @sum(X[l])
 lattice = Chain(4)
-H(lattice)
+H = h(lattice)
 
 end
 
