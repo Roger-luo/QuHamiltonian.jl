@@ -43,8 +43,8 @@ end
 lattice = Chain(4)
 
 @nearrest i, j
-J = @parameter i, j -> rand()
-H = @sum J[i, j]S[i]S[j]
+J = i, j -> rand()
+H = @sum J(i, j)S[i]S[j]
 
 lattice = Square(4, 4)
 H(lattice)
@@ -55,10 +55,11 @@ end
 
 lattice = Chain(4)
 @nearrest i, j
-J = size(lattice, i, j) |> zeros
-J[1, 3] = 3
+A = size(lattice, i, j) |> zeros
+A[1, 3] = 3
+J = i, j -> A[i, j]
 
-H = @sum J[i, j]Z[i]Z[j]
+H = @sum J(i, j)Z[i]Z[j]
 H(lattice)
 
 end
