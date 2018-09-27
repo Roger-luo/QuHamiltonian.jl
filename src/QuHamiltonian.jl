@@ -9,6 +9,7 @@ include("placeholder.jl")
 
 include("sub_hamiltonian.jl")
 include("symbolic.jl")
+include("traits.jl")
 include("eval.jl")
 
 include("conversions.jl")

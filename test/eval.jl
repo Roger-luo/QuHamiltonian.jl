@@ -8,7 +8,6 @@ II = Matrix{Float64}(I, 2, 2)
 ##########################
 
 @testset "vertex sum" begin
-
     h = @sum Z[@vertex(i)]
     ltc = Chain(4)
     H = h(ltc)
@@ -31,7 +30,6 @@ II = Matrix{Float64}(I, 2, 2)
 end
 
 @testset "edge sum" begin
-
     @nearest i, j
     h = @sum Z[i]Z[j]
     ltc = Chain(4)

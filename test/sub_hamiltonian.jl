@@ -44,3 +44,13 @@ end
     # name of place holders does not mean anything
     @test LZ1 * LZ2 == LZ2 * LZ3
 end
+
+@testset "merge placeholder" begin
+    @vertex i
+
+    A = zeros(8, 8)
+    @subham(Z[i]Z[i]) == @subham($(Z*Z)[i])
+
+    @nearest i, j, k
+    @subham(A[i, j, k]A[i, j, k]) == @subham($(A * A)[i, j, k])
+end
