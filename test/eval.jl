@@ -54,6 +54,20 @@ end
     @test sparse(H) == sparse(A)
 end
 
+@testset "add/sub" begin
+
+    @nearest i, j
+    @vertex l
+    h = @sum(X[i]X[j]) - 0.1 * @sum(Z[l])
+    ltc = Chain(4)
+    H = h(ltc)
+
+    lhs = Bit[0, 0, 0, 0]
+    rhs = Bit[0, 0, 0, 0]
+
+    H[lhs, rhs]
+end
+
 
 # @testset "multiple vertex sum" begin
 #

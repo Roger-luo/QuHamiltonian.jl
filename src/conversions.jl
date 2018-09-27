@@ -19,4 +19,5 @@ end
 
 using SparseArrays
 # TODO: use partial eval instead
+# TODO: And parallel the loop
 SparseArrays.sparse(ex::OnRegion) = sparse(Matrix(ex))

@@ -70,6 +70,8 @@ struct Sub{LHS, RHS} <: AddOrSub{LHS, RHS}
     rhs::RHS
 end
 
+Base.eltype(ex::AddOrSub) = promote_type(eltype(ex.lhs), eltype(ex.rhs))
+
 Base.sum(x::SubHam) = Sum(x)
 # move scalar out of sum
 Base.sum(x::ScalarProd{<:Number}) = ScalarProd(x.val, Sum(x.expr))
