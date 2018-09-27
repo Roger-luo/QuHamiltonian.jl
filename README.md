@@ -4,6 +4,9 @@ I was drunk on my birthday, then I wrote this.
 
 This package implements a Domain Specific Language (DSL) for Hamiltonian construction.
 
+**Warning**: This package is still at very early stage, lack of tests and docs,
+use it at your own risk!
+
 ## A glance of the interface
 
 ```julia
